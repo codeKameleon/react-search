@@ -1,7 +1,15 @@
+import styled from 'styled-components';
+import { EpisodeThumb } from './components/EpisodeThumb';
+import { GlobalStyle } from './globalStyles';
+
 export const  App = () => {
   return (
   <>
-    <h1>React Searchbar</h1>
+    <GlobalStyle/>
+
+    <h1>Boarderless</h1>
+
+    <EpisodeThumb/>
   </>
   );
 }
