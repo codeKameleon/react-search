@@ -27,7 +27,7 @@ export const EpisodeThumb = () => {
                     return(
                         <li key={item.id}>
                             <figure>
-                                <img width ="200" src={item.artwork_url}/>
+                                <img width ="200" src={item.artwork_url} alt={`Episode ${item.title}`}/>
 
                                 <figcaption>
                                     <h2>Episode {item.title}</h2>
