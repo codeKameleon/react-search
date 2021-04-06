@@ -13,8 +13,8 @@ const Filter =  styled.input`
     }
 `
 
-export const SearchBar = ({value, handleChange}) => {
+export const SearchBar = ({value, onChange}) => {
     return (
-        <Filter onChange={handleChange} />
+        <Filter value={value} onChange={onChange} />
     )
 }
