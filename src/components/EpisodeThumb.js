@@ -2,14 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Episodes = styled.ul`
-    display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 1em;
+  margin : 2rem 0;
 
-    li {
-        padding: 1rem;
+  li {
+      margin-bottom: 1rem;
+
+  }
+
+    .img-wrapper {
+        width: 100%;
+        border: 4px solid #fff;
+        margin-bottom: 0.5rem;
     }
 
-    li:first-child {
-        padding-left: 0;
+    img {
+        width: 100%;
+        display: block;
     }
 `
 export const EpisodeThumb = ({episodes, loading}) => {
@@ -23,7 +34,9 @@ export const EpisodeThumb = ({episodes, loading}) => {
                     return(
                         <li key={episode.id}>
                             <figure>
-                                <img width ="250" src={episode.artwork_url} alt={`Episode ${episode.title}`}/>
+                                <div className="img-wrapper">
+                                    <img src={episode.artwork_url} alt={`Episode ${episode.title}`}/>
+                                </div>
 
                                 <figcaption>
                                     <h2>{episode.title}</h2>

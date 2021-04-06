@@ -2,19 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Filter =  styled.input`
-    width: 30%;
-    height: 2rem;
+    width: 100%;
+    height: 3rem;
     padding: 0 1rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(0,0,0, .3);
+    border-radius: 5px;
+    border: 3px solid rgba(0,0,0, .3);
+    background-color: #bcc6cc;
 
     &:focus {
         outline: none;
+    }
+
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+
+    @media (min-width: 992px) {
+        width: 40%;
     }
 `
 
 export const SearchBar = ({value, onChange}) => {
     return (
-        <Filter value={value} onChange={onChange} />
+        <Filter value={value} onChange={onChange} placeholder='Search episode' />
     )
 }
