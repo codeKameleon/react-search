@@ -2,15 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Episodes = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-gap: 1em;
-  margin : 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 1em;
+    margin : 2rem 0;
 
-  li {
-      margin-bottom: 1rem;
+    @media (min-width: 992px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
-  }
+    li {
+        margin-bottom: 1rem;
+
+        @media (min-width: 992px) {
+            width: 300px;
+        }
+    }
 
     .img-wrapper {
         width: 100%;
