@@ -8,9 +8,11 @@ const Filter =  styled.input`
     border-radius: 5px;
     border: 3px solid rgba(0,0,0, .3);
     background-color: #bcc6cc;
+    transition: background 300ms ease;
 
     &:focus {
         outline: none;
+        background-color: #fff;
     }
 
     @media (min-width: 768px) {
