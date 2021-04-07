@@ -17,6 +17,13 @@ const Title = styled.h1`
   margin-bottom: 1rem;
 `
 
+const NoResults = styled.p`
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+`
+
 export const  App = () => {
   const url = process.env.REACT_APP_API_URL
 
@@ -31,6 +38,7 @@ export const  App = () => {
   useEffect(() => {
     const results = episodes.filter(episode => episode.title.toLowerCase().includes(search.toLowerCase()))
     setFilterEpisodes(results)
+    console.log('episodes', episodes)
   }, [search, episodes])
 
   return (
@@ -42,8 +50,9 @@ export const  App = () => {
 
       <SearchBar value={search} onChange={e => handleChange(e.target.value)}/>
 
+      {search && filterEpisodes.length < 1 ? <NoResults> No results </NoResults>: null}
 
-      <EpisodeThumb loading={loading} episodes={search.length < 1  ? episodes : filterEpisodes} />
+     <EpisodeThumb loading={loading} episodes={search.length < 1  ? episodes : filterEpisodes} />
     </Container>
 
   </>
