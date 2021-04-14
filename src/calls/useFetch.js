@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
+
 
 const Wrapper =  styled.div`
     display: flex;
@@ -19,10 +21,10 @@ export const useFetch = url => {
     })
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(url)  
-            const data = await response.json()     
-        
-        if (response.ok) {
+            const response =  await axios.get(url)
+            const data = await response.data 
+
+        if (response.statusText == "OK") {
             setState({
                 items: data,
                 loading: false
