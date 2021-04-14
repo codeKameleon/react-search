@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Filter =  styled.input`
@@ -26,6 +27,11 @@ const Filter =  styled.input`
 
 export const SearchBar = ({value, onChange}) => {
     return (
-        <Filter value={value} onChange={onChange} placeholder='Search episode' />
+        <Filter value={value} onChange={onChange} placeholder='Search Episode' />
     )
+}
+
+SearchBar.propTypes =  {
+    value: PropTypes.string,
+    onChange: PropTypes.func
 }
