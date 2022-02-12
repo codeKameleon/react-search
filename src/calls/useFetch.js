@@ -25,11 +25,11 @@ export const useFetch = (url, token) => {
             try {
                 const response =  await axios.get(url, {
                     headers: {
-                        "Authorizatidon": `Token token=${token}`
+                        "Authorization": `Token token=${token}`
                     }
                 })
 
-                const data = await response.p
+                const data = await response.data
 
                 setState({
                     items: data,
