@@ -1,4 +1,5 @@
 import React from 'react';
+import { Loader } from './Loader'
 import styled from 'styled-components';
 
 const Episodes = styled.ul`
@@ -34,7 +35,7 @@ const Episodes = styled.ul`
 `
 export const EpisodeThumb = ({episodes, loading}) => {
     if(loading) {
-        return <p> Loading ... </p>
+        return <Loader/>
     }
     return(
         <>
