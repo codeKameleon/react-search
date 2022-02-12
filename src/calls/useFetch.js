@@ -14,35 +14,44 @@ const ErrorMessage = styled.div`
     background: #df1c44;
     color: #fff;
 `
-export const useFetch = url => {
+export const useFetch = (url, token) => {
     const [state, setState] = useState({
         items: [],
         loading: true
     })
+
     useEffect(() => {
         const fetchData = async () => {
-            const response =  await axios.get(url)
-            const data = await response.data 
+            try {
+                const response =  await axios.get(url, {
+                    headers: {
+                        "Authorizatidon": `Token token=${token}`
+                    }
+                })
 
-        if (response.statusText == "OK") {
-            setState({
-                items: data,
-                loading: false
-            })
-        } else {
-            setState(s=>({...s, loading: false}))
+                const data = await response.p
 
-            return (
-                <Wrapper>     
-                    <ErrorMessage>
-                        {response.statusText}
-                    </ErrorMessage>
-                </Wrapper>
-            )
+                setState({
+                    items: data,
+                    loading: false
+                })
+
+            } catch (err){
+                setState(s=>({...s, loading: false}))
+                console.log(err)
+
+                return (
+                    <Wrapper>     
+                        <ErrorMessage>
+                            {err}
+                        </ErrorMessage>
+                    </Wrapper>
+                )
+            }
         }
-    }
-    fetchData();
-    }, [url])
+
+        fetchData();
+    })
 
     return [
         state.items,

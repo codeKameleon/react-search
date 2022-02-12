@@ -25,7 +25,7 @@ const Filter =  styled.input`
     }
 `
 
-export const SearchBar = ({value, onChange}) => {
+export const SearchBar = ( {value, onChange }) => {
     return (
         <Filter value={value} onChange={onChange} placeholder='Search Episode' />
     )

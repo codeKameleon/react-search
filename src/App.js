@@ -26,8 +26,9 @@ const NoResults = styled.p`
 
 export const  App = () => {
   const url = process.env.REACT_APP_API_URL
+  const token = process.env.REACT_APP_API_TOKEN
 
-  const [episodes, loading] = useFetch(url)
+  const [episodes, loading] = useFetch(url, token)
   const [search, setSearch] =  useState('');
   const [filterEpisodes, setFilterEpisodes] =  useState([]);
 
