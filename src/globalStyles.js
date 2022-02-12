@@ -8,13 +8,13 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     html {
-        font-family: 'Arial', sans-serif;
+        font-family: 'Rubik Light', sans-serif;
         font-size: 100%;
     }
 
     body {
-        background-color: #0C090A;
-        color: #fff;
+        background-color: #F5F5F5;
+        color: #0c0908;
         padding: 2rem;
     }
 
@@ -23,4 +23,4 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         list-style-type: none;
     }
-`
+`  

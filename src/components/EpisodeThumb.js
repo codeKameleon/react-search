@@ -3,28 +3,31 @@ import { Loader } from './Loader'
 import styled from 'styled-components';
 
 const Episodes = styled.ul`
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-gap: 1em;
-    margin : 2rem 0;
-
-    @media (min-width: 992px) {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
 
     li {
         margin-bottom: 1rem;
+        max-width: 100%;
+        font-size: 0.8rem;
 
         @media (min-width: 992px) {
             width: 300px;
         }
     }
 
+    figure {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        border: 4px solid #0c0908;
+        margin: 1.5rem;
+    }
+
     .img-wrapper {
         width: 100%;
-        border: 4px solid #fff;
         margin-bottom: 0.5rem;
     }
 
@@ -35,7 +38,11 @@ const Episodes = styled.ul`
 `
 export const EpisodeThumb = ({episodes, loading}) => {
     if(loading) {
-        return <Loader/>
+        return (
+            <div style={{width: "100%"}}>
+                <Loader/>
+            </div>
+        )
     }
     return(
         <>

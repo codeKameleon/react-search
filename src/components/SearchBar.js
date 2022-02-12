@@ -4,20 +4,17 @@ import styled from 'styled-components';
 
 const Filter =  styled.input`
     width: 100%;
-    height: 3rem;
+    height: 3.5rem;
     padding: 0 1rem;
+    margin: 2rem;
     border-radius: 5px;
-    border: 3px solid rgba(0,0,0, .3);
-    background-color: #bcc6cc;
-    transition: background 300ms ease;
+    border: 3px solid #0c0908;
+    background-color: #F5F5F5;
+    transition: all 300ms ease;
 
     &:focus {
         outline: none;
-        background-color: #fff;
-    }
-
-    @media (min-width: 768px) {
-        width: 50%;
+        border: 3px solid #FBB117;
     }
 
     @media (min-width: 992px) {
@@ -25,7 +22,7 @@ const Filter =  styled.input`
     }
 `
 
-export const SearchBar = ( {value, onChange }) => {
+export const SearchBar = ({ value, onChange }) => {
     return (
         <Filter value={value} onChange={onChange} placeholder='Search Episode' />
     )

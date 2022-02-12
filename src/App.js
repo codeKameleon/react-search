@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useFetch } from './calls/useFetch';
 import { EpisodeThumb } from './components/EpisodeThumb';
 import { SearchBar } from './components/SearchBar';
+import GlobalFonts from './fonts/fonts'
 import { GlobalStyle } from './globalStyles';
 import styled from 'styled-components';
 
@@ -9,18 +10,19 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2rem;
 `
 
 const Title = styled.h1`
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 3.5rem;
 `
 
 const NoResults = styled.p`
   width: 100%;
   text-align: center;
-  color: #fff;
   margin-top: 2rem;
 `
 
@@ -39,11 +41,11 @@ export const  App = () => {
   useEffect(() => {
     const results = episodes.filter(episode => episode.title.toLowerCase().includes(search.toLowerCase()))
     setFilterEpisodes(results)
-    console.log('episodes', episodes)
   }, [search, episodes])
 
   return (
   <>
+    <GlobalFonts/>
     <GlobalStyle/>
 
     <Container>

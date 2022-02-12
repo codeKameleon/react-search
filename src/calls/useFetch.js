@@ -37,21 +37,13 @@ export const useFetch = (url, token) => {
                 })
 
             } catch (err){
-                setState(s=>({...s, loading: false}))
+                setState(previousState =>({...previousState, loading: false}))
                 console.log(err)
-
-                return (
-                    <Wrapper>     
-                        <ErrorMessage>
-                            {err}
-                        </ErrorMessage>
-                    </Wrapper>
-                )
             }
         }
 
         fetchData();
-    })
+    },[url, token])
 
     return [
         state.items,
