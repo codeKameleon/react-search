@@ -3,10 +3,10 @@ import { Loader } from './Loader'
 import styled from 'styled-components';
 
 const Episodes = styled.ul`
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 1em;
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     li {
         margin-bottom: 1rem;
@@ -23,7 +23,10 @@ const Episodes = styled.ul`
         z-index: 1;
         padding: 2rem;
         border: 4px solid #0c0908;
-        margin: 1.5rem;
+
+        @media (min-width: 992px) {
+            margin: 1.5rem;
+        }
     }
 
     .img-wrapper {
@@ -36,14 +39,15 @@ const Episodes = styled.ul`
         display: block;
     }
 `
-export const EpisodeThumb = ({episodes, loading}) => {
+export const EpisodeThumb = ({ episodes, loading }) => {
     if(loading) {
         return (
-            <div style={{width: "100%"}}>
+            <div style={{ width: "100%" }}>
                 <Loader/>
             </div>
         )
     }
+
     return(
         <>
             <Episodes>

@@ -1,19 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 
-
-const Wrapper =  styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-const ErrorMessage = styled.div`
-    display: flex;
-    justify-content: center;
-    background: #df1c44;
-    color: #fff;
-`
 export const useFetch = (url, token) => {
     const [state, setState] = useState({
         items: [],

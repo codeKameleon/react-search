@@ -8,7 +8,8 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   margin-top: 2rem;
 `
@@ -23,6 +24,7 @@ const Title = styled.h1`
 const NoResults = styled.p`
   width: 100%;
   text-align: center;
+  font-size: 1.5rem;
   margin-top: 2rem;
 `
 
@@ -46,6 +48,7 @@ export const  App = () => {
   return (
   <>
     <GlobalFonts/>
+
     <GlobalStyle/>
 
     <Container>
@@ -55,7 +58,7 @@ export const  App = () => {
 
       {search && filterEpisodes.length < 1 ? <NoResults> No results </NoResults>: null}
 
-     <EpisodeThumb loading={loading} episodes={search.length < 1  ? episodes : filterEpisodes} />
+      <EpisodeThumb loading={loading} episodes={search.length < 1  ? episodes : filterEpisodes} />
     </Container>
 
   </>

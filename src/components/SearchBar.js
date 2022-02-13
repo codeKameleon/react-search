@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Filter =  styled.input`
-    width: 100%;
+    width: 85%;
     height: 3.5rem;
     padding: 0 1rem;
     margin: 2rem;
@@ -17,7 +17,7 @@ const Filter =  styled.input`
         border: 3px solid #FBB117;
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
         width: 40%;
     }
 `
