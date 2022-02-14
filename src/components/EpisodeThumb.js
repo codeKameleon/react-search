@@ -3,7 +3,7 @@ import { Loader } from './Loader'
 import styled from 'styled-components';
 
 const Episodes = styled.ul`
-    width: 85%;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

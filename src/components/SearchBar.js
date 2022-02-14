@@ -6,7 +6,7 @@ const Filter =  styled.input`
     width: 85%;
     height: 3.5rem;
     padding: 0 1rem;
-    margin: 2rem;
+    margin: 2rem 0;
     border-radius: 5px;
     border: 3px solid #0c0908;
     background-color: #F5F5F5;

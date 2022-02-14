@@ -18,7 +18,11 @@ const Title = styled.h1`
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
-  font-size: 3.5rem;
+  font-size: 2rem;
+
+  @media (min-width: 992px) {
+    font-size: 3.5rem;
+}
 `
 
 const NoResults = styled.p`
